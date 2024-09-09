@@ -93,4 +93,8 @@ public class User implements Serializable {
     public void setV_code(String v_code) {
         this.v_code = v_code;
     }
+
+    public void setVerif(String verified) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

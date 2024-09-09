@@ -23,10 +23,7 @@ async function signUp() {
         const json = await response.json();
         const popup = Notification();
         if (json.success) {
-            popup.success({
-
-                message: json.content
-            });
+                       window.location = "verify.html";
         } else {
             popup.warning({
 

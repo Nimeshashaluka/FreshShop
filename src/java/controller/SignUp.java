@@ -81,7 +81,7 @@ public class SignUp extends HttpServlet {
 
                 request.getSession().setAttribute("email", user_DTO.getEmail());
                 response_DTO.setSuccess(true);
-                response_DTO.setContent("Registration Complete. Please verify your account to proceed.");
+                response_DTO.setContent("Registration Complete. Please Visit the Sign In Page and Verify your Account!");
             }
             session.close();
         }

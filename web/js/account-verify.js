@@ -1,18 +1,17 @@
-async function signUp() {
+async function verifyAccount() {
+    console.log("verify");
 
-    const user_dto = {
-        first_name: document.getElementById("firstname").value,
-        last_name: document.getElementById("lastname").value,
-        mobile: document.getElementById("mobile").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
+    const dto = {
+        verifyCode: document.getElementById("verifyCode").value,
     };
 
+    console.log(dto);
+
     const response = await fetch(
-            "SignUp",
+            "Verification",
             {
                 method: "POST",
-                body: JSON.stringify(user_dto),
+                body: JSON.stringify(dto),
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -22,15 +21,14 @@ async function signUp() {
     if (response.ok) {
         const json = await response.json();
         const popup = Notification();
+
         if (json.success) {
-                       window.location = "verify.html";
+            window.location = "index.html";
         } else {
             popup.warning({
 
                 message: json.content
             });
-
-
         }
     } else {
         popup.error({
@@ -39,4 +37,3 @@ async function signUp() {
         });
     }
 }
-

@@ -1,15 +1,14 @@
-async function signUp() {
+async  function signIn() {
 
     const user_dto = {
-        first_name: document.getElementById("firstname").value,
-        last_name: document.getElementById("lastname").value,
-        mobile: document.getElementById("mobile").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
+
     };
+    console.log(user_dto);
 
     const response = await fetch(
-            "SignUp",
+            "SignIn",
             {
                 method: "POST",
                 body: JSON.stringify(user_dto),
@@ -22,21 +21,32 @@ async function signUp() {
     if (response.ok) {
         const json = await response.json();
         const popup = Notification();
-        if (json.success) {
-                       window.location = "verify.html";
-        } else {
-            popup.warning({
 
-                message: json.content
-            });
+        if (json.success) {
+            window.location = "index.html";
+        } else {
+
+            if (json.content == "Please Click the Verify Button and Verify the Your Account!") {
+                popup.warning({
+
+                    message: json.content
+                });
+            } else {
+                popup.warning({
+
+                    message: json.content
+                });
+            }
 
 
         }
+
+
     } else {
         popup.error({
 
             message: "Please try again later!"
         });
     }
-}
 
+}
