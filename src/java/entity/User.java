@@ -16,28 +16,28 @@ public class User implements Serializable {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    @Column(name = "first_name")
+
+    @Column(name = "first_name", length = 45, nullable = false)
     private String first_name;
-    
-    @Column(name = "last_name")
+
+    @Column(name = "last_name", length = 45, nullable = false)
     private String last_name;
-    
-    @Column(name = "email")
+
+    @Column(name = "email", length = 45, nullable = false)
     private String email;
-    
-    @Column(name = "mobile")
+
+    @Column(name = "mobile", length = 10, nullable = false)
     private String mobile;
-    
-    @Column(name = "password")
+
+    @Column(name = "password", length = 45, nullable = false)
     private String password;
-    
-    @Column(name = "v_code")
+
+    @Column(name = "v_code", length = 12, nullable = false)
     private String v_code;
 
     public User() {
     }
-    
+
     public int getId() {
         return id;
     }

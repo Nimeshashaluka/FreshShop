@@ -5,7 +5,7 @@ async  function signIn() {
         password: document.getElementById("password").value,
 
     };
-    console.log(user_dto);
+//    console.log(user_dto);
 
     const response = await fetch(
             "SignIn",
@@ -24,6 +24,7 @@ async  function signIn() {
 
         if (json.success) {
             window.location = "index.html";
+
         } else {
 
             if (json.content == "Please Click the Verify Button and Verify the Your Account!") {
