@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "weight")
-public class Weight implements Serializable {
+@Table(name = "product_status")
+public class Product_Status implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -20,9 +20,10 @@ public class Weight implements Serializable {
     @Column(name = "name", length = 45, nullable = false)
     private String name;
 
-    public Weight() {
+    public Product_Status() {
     }
 
+    
     public int getId() {
         return id;
     }
@@ -38,6 +39,5 @@ public class Weight implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-  
+   
 }

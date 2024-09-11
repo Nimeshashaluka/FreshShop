@@ -11,6 +11,8 @@
         <mapping class="entity.User"></mapping>   
         <mapping class="entity.Category"></mapping>       
         <mapping class="entity.Model"></mapping>   
-        <mapping class="entity.Weight"></mapping>     
+        <mapping class="entity.Product_Status"></mapping>  
+        <mapping class="entity.Product"></mapping>      
+        <mapping class="entity.productitemsize"></mapping>  
     </session-factory>
 </hibernate-configuration>

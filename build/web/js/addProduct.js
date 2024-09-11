@@ -8,23 +8,23 @@ async function loadData() {
 
     if (response.ok) {
         const json = await response.json();
-//        const popup = Notification();
+        const popup = Notification();
 
 //        console.log(json);
 
         const categoryList = json.categoryList;
         modelList = json.modelList;
-        const weightList = json.weightList;
+        const productSize = json.productSize;
 
         loadSelect("categorySelect", categoryList, "name");
         loadSelect("modelSelect", modelList, "name");
-        loadSelect("weightSelect", weightList, "name");
+        loadSelect("productSize", productSize, "name");
 
     } else {
-//        popup.error({
-//
-//            message: "Please try again later!"
-//        });
+        popup.error({
+
+            message: "Please try again later!"
+        });
     }
 }
 
@@ -54,5 +54,61 @@ function updateModels() {
             modelSelectTag.appendChild(optionTag);
         }
     });
+
+}
+
+async  function productAdd() {
+    const titleSelectTag = document.getElementById("title");
+    const descriptionSelectTag = document.getElementById("description");
+    const categorySelectTag = document.getElementById("categorySelect");
+    const modelSelectTag = document.getElementById("modelSelect");
+    const productSizeTag = document.getElementById("productSize");
+    const priceSelectTag = document.getElementById("price");
+    const quantitySelectTag = document.getElementById("quantity");
+
+    const imageSelectTag = document.getElementById("image1");
+
+    const data = new FormData();
+
+    data.append("titleId", titleSelectTag.value);
+    data.append("descriptionId", descriptionSelectTag.value);
+    data.append("categoryId", categorySelectTag.value);
+    data.append("modelId", modelSelectTag.value);
+    data.append("productSizeId", productSizeTag.value);
+    data.append("priceSelectId", priceSelectTag.value);
+    data.append("quantitySelectId", quantitySelectTag.value);
+    data.append("imageId", imageSelectTag.files[0]);
+
+    const response = await fetch(
+            "AddProduct",
+            {
+                method: "POST",
+                body: data
+
+            }
+    );
+
+    if (response.ok) {
+        const json = await response.json();
+        const popup = Notification();
+
+        if (json.success) {
+
+
+        } else {
+            popup.warning({
+
+                message: json.content
+            });
+        }
+
+
+    } else {
+        popup.error({
+
+            message: "Please try again later!"
+        });
+    }
+
 
 }
