@@ -8,11 +8,11 @@
         <property name="hibernate.connection.password">Nimesh%$#10</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping class="entity.User"></mapping>   
-        <mapping class="entity.Category"></mapping>       
-        <mapping class="entity.Model"></mapping>   
-        <mapping class="entity.Product_Status"></mapping>  
-        <mapping class="entity.Product"></mapping>      
-        <mapping class="entity.productitemsize"></mapping>  
+        <mapping class="entity.User"/>  
+        <mapping class="entity.Category"/>       
+        <mapping class="entity.Model"/>  
+        <mapping class="entity.Product_Status"/> 
+        <mapping class="entity.Product"/>      
+        <mapping class="entity.productitemsize"/>
     </session-factory>
 </hibernate-configuration>

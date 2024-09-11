@@ -52,6 +52,10 @@ public class Product implements Serializable {
     @JoinColumn(name = "productItemSize_id")
     private productitemsize product_size;
 
+    public Product() {
+    }
+
+    
     public int getId() {
         return id;
     }
@@ -131,5 +135,7 @@ public class Product implements Serializable {
     public void setProduct_size(productitemsize product_size) {
         this.product_size = product_size;
     }
+
+
 
 }

@@ -93,8 +93,20 @@ async  function productAdd() {
         const popup = Notification();
 
         if (json.success) {
+            
+            categorySelectTag.value=0;
+            modelSelectTag.length=1;
+            titleSelectTag.value="";
+            descriptionSelectTag.value="";
+            productSizeTag.value=0;
+            priceSelectTag.value="";
+            quantitySelectTag.value=1;
+            imageSelectTag.value=null;
 
+            popup.success({
 
+                message: json.content
+            });
         } else {
             popup.warning({
 
