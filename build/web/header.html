@@ -26,7 +26,7 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/custom.css">
     </head>
-    <body>
+    <body onload="checkLogIn();">
         <!-- Start Main Top -->
         <div class="main-top">
             <div class="container-fluid">
@@ -51,10 +51,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="login-box font-weight-bold" >
-                            <a href="signUp.html" class="text-light">Sign Up</a> 
-                            <span> / </span>
-                            <a href="signIn.html" class="text-light">Sign In</a>
+                        <div id="logOut-link" class="login-box font-weight-bold" >
+                            <a id="logOut-link1" href="signUp.html" class="text-light">Sign Up / </a> 
+                            <!--<span> </span>-->
+                            <a id="logOut-link2" href="signIn.html" class="text-light">Sign In</a>
                         </div>
                         <div class="text-slid-box">
                             <div id="offer-box" class="carouselTicker">
@@ -192,5 +192,6 @@
         <script src="js/form-validator.min.js"></script>
         <script src="js/contact-form-script.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

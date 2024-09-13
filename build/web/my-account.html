@@ -29,7 +29,7 @@
 
     </head>
 
-    <body onload="headerload();">
+    <body onload="headerload(); checkLogIn();">
         <div id="header-container"></div>
 
         <!-- Start Top Search -->
@@ -69,15 +69,27 @@
                             <h2 class="text-right text-light">My Account</h2>
                         </div>
                         <div class="col-12">
-                            <div class="col-md-12"><label class="labels">First Name</label><input type="text" class="form-control" value=""></div>
-                            <div class="col-md-12"><label class="labels">Last Name</label><input type="text" class="form-control" value=""></div>
+                            <div class="col-md-12">
+                                <label class="labels">First Name</label>
+                                <span id="userFname" class="text-dark form-control">Name</span>
 
-                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" value=""></div>
-                            <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" value=""></div>
+                            </div>
+                            <div class="col-md-12"><label class="labels">Last Name</label>
+                                <span id="userLname" class="text-dark form-control">Name</span>
+
+                            </div>
+
+<!--                            <div class="col-md-12"><label class="labels">Mobile Number</label>
+                                <span id="mobile1" class="text-dark form-control">Name</span>
+                            </div>-->
+
+                            <div class="col-md-12"><label class="labels">Email</label>
+                                <span id="email1" class="text-dark form-control">Name</span>
+                            </div>
                         </div>
 
                         <div class="mt-5 text-center">
-                            <button type="button" class="btn btn-danger btn-lg">Log Out</button>
+                            <button type="button" class="btn btn-danger btn-lg"><a id="logOutButton" class="text-light" href=""></a></button>
                             <button type="button" class="btn btn-success btn-lg"><a href="product-add.html" class="text-light">Add Product</a></button>
                         </div>
 
@@ -290,6 +302,7 @@
         <script src="js/contact-form-script.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/include.js"></script>
+        <script src="js/index.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 
