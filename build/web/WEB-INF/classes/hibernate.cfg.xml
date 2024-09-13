@@ -13,6 +13,7 @@
         <mapping class="entity.Model"/>  
         <mapping class="entity.Product_Status"/> 
         <mapping class="entity.Product"/>      
-        <mapping class="entity.productitemsize"/>
+        <mapping class="entity.productitemsize"/>       
+        <mapping class="entity.Cart"/>
     </session-factory>
 </hibernate-configuration>
