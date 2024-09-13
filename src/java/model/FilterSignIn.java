@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {"/my-account.html","/product-add.html","/cart.html"})
+@WebFilter(urlPatterns = {"/my-account.html","/product-add.html"})
 public class FilterSignIn implements Filter{
 
     @Override
