@@ -1,5 +1,3 @@
-//var address;
-
 async function loadCheckOut() {
 
     const response = await fetch(
@@ -8,7 +6,6 @@ async function loadCheckOut() {
 
     if (response.ok) {
         const json = await response.json();
-        const popup = Notification();
 
         console.log(json);
 
@@ -116,6 +113,72 @@ async function loadCheckOut() {
             window.location = "signIn.html";
         }
 
+    }
+
+}
+
+async function pcheckout() {
+//    console.log("check out");
+
+    let currentAddressCheked = document.getElementById("same-address").checked;
+
+    //Address Data
+
+    let first_name = document.getElementById("firstName");
+    let last_name = document.getElementById("lastName");
+    let address1 = document.getElementById("address");
+    let address2 = document.getElementById("address2");
+    let postal_Code = document.getElementById("postalCode");
+    let mobile = document.getElementById("mobile");
+    let city = document.getElementById("city");
+
+//Request Data Json object eken ena
+    const data = {
+        currentAddressCheked: currentAddressCheked,
+        first_name: first_name.value,
+        last_name: last_name.value,
+        address1: address1.value,
+        address2: address2.value,
+        postal_Code: postal_Code.value,
+        mobile: mobile.value,
+        city_id: city.value,
+    };
+
+    const response = await fetch(
+            "Pcheckout",
+            {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+    );
+
+    const popup = Notification();
+
+    if (response.ok) {
+        const  json = await response.json();
+
+        if (json.success) {
+
+            popup.success({
+
+                message: "CheckOut Completed"
+            });
+
+        } else {
+            popup.warning({
+
+                message: json.message
+            });
+        }
+
+    } else {
+        popup.error({
+
+            message: "Please try again later!"
+        });
     }
 
 }

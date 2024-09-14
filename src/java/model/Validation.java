@@ -19,6 +19,6 @@ public class Validation {
         return text.matches("^\\d+$");
     }
     public static boolean isMobile(String mobile){
-        return mobile.matches("^(075|071|072|070|074|076|077|078)\\d{7}$");
+        return mobile.matches("^07[01245678]{1}[0-9]{7}$");
     }
 }
